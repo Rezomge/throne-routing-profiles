@@ -76,6 +76,7 @@
     {
       "action": "route",
       "domain_suffix": [
+        "5222.de",
         "ajay.app",
         "androidpolice.com",
         "auroraoss.com",
@@ -107,6 +108,7 @@
         "nexusmods.com",
         "nexus-cdn.com",
         "nura.eco",
+        "opennet.me",
         "openrouter.ai",
         "palemoon.org",
         "playit.gg",
@@ -170,9 +172,7 @@
     {
       "action": "route",
       "domain_suffix": [
-        "mozilla.net",
-        "5222.de",
-        "opennet.me"
+        "mozilla.net"
       ],
       "name": "Mobile in Proxy",
       "outbound": "proxy",
