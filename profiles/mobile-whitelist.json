@@ -1,0 +1,190 @@
+{
+  "default_outbound": "direct",
+  "kind": "throne-route-profile",
+  "name": "Bypass Russia Mobile (Whitelist)",
+  "rules": [
+    {
+      "action": "hijack-dns",
+      "name": "Route DNS",
+      "protocol": "dns",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "name": "ICMP in Direct",
+      "network": "icmp",
+      "outbound": "direct",
+      "type": "custom"
+    },
+    {
+      "action": "reject",
+      "ip_cidr": [
+        "0.0.0.0"
+      ],
+      "name": "Block 0.0.0.0",
+      "reject_method": "drop",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "name": "Torrents in Direct",
+      "outbound": "direct",
+      "protocol": "bittorrent",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "ip_is_private": true,
+      "name": "Private in Direct",
+      "outbound": "direct",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "domain_suffix": [
+        ".ru",
+        ".su",
+        ".xn--p1ai",
+        ".by",
+        ".xn--90ais",
+        "mangalib.com",
+        "imglib.info",
+        "seimanga.me",
+        "usagi.one"
+      ],
+      "name": "Russia in Direct",
+      "outbound": "direct",
+      "rule_set": [
+        "geoip-ru",
+        "geoip-by",
+        "geosite-ru",
+        "geosite-category-ru",
+        "geosite-category-gov-ru",
+        "geosite-category-ip-geo-detect"
+      ],
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "name": "Apps in Proxy",
+      "outbound": "proxy",
+      "package_name": [
+        "de.monocles.chat"
+      ],
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "domain_suffix": [
+        "ajay.app",
+        "androidpolice.com",
+        "auroraoss.com",
+        "brave.com",
+        "browserleaks.com",
+        "buzzheavier.com",
+        "calyxos.org",
+        "catsarch.com",
+        "celsoazevedo.com",
+        "clerk.com",
+        "clickable-ut.dev",
+        "dancewave.online",
+        "devicespecifications.com",
+        "distrowatch.com",
+        "dragonflybsd.org",
+        "fmstream.org",
+        "futo.org",
+        "githubusercontent.com",
+        "gsmarena.com",
+        "haiku-os.org",
+        "hardwaretester.com",
+        "iditelesombase.org",
+        "incy.cc",
+        "ironfoxoss.org",
+        "izzysoft.de",
+        "lineageos.org",
+        "moddedmc.wiki",
+        "modrinth.com",
+        "nexusmods.com",
+        "nexus-cdn.com",
+        "nura.eco",
+        "openrouter.ai",
+        "palemoon.org",
+        "playit.gg",
+        "postmarketos.org",
+        "px-cloud.net",
+        "radio-browser.info",
+        "ranobelib.me",
+        "regway.com",
+        "rutracker.org",
+        "rutrk.org",
+        "secureblue.dev",
+        "shift.eco",
+        "statcounter.com",
+        "stripe.com",
+        "stripe.network",
+        "tavily.com",
+        "techindeep.com",
+        "ubuntu-touch.io",
+        "ubports.com",
+        "unknownworlds.com",
+        "voidlinux.org",
+        "w3reforged.com",
+        "waveani.fun",
+        "whonix.org",
+        "xbrowsersync.org",
+        "xdaforums.com",
+        "xiaomi.eu",
+        "zen-browser.app"
+      ],
+      "name": "Other in Proxy",
+      "outbound": "proxy",
+      "rule_set": [
+        "geoip-ru-blocked",
+        "geosite-ru-blocked",
+        "geoip-amazon",
+        "geosite-amazon",
+        "geosite-anime",
+        "geosite-discord",
+        "geosite-ehentai",
+        "geosite-flatpak",
+        "geoip-google",
+        "geosite-google",
+        "geosite-groq",
+        "geosite-kick",
+        "geoip-openai",
+        "geosite-openai",
+        "geosite-rutracker",
+        "geosite-sony",
+        "geosite-riot",
+        "geoip-telegram",
+        "geosite-telegram",
+        "geoip-tor",
+        "geosite-tor",
+        "geosite-whatsapp",
+        "geosite-xhamster",
+        "geosite-xnxx",
+        "geosite-xvideos"
+      ],
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "domain_suffix": [
+        "mozilla.net",
+        "5222.de",
+        "opennet.me"
+      ],
+      "name": "Mobile in Proxy",
+      "outbound": "proxy",
+      "rule_set": [
+        "geoip-github",
+        "geosite-github",
+        "geosite-mozilla",
+        "geosite-steam"
+      ],
+      "type": "custom"
+    }
+  ],
+  "v": 1
+}
+

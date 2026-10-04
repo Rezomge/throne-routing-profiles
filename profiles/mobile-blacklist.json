@@ -1,0 +1,70 @@
+{
+  "default_outbound": "direct",
+  "kind": "throne-route-profile",
+  "name": "Bypass Russia Mobile (Blacklist)",
+  "rules": [
+    {
+      "action": "hijack-dns",
+      "name": "Route DNS",
+      "protocol": "dns",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "name": "ICMP in Direct",
+      "network": "icmp",
+      "outbound": "direct",
+      "type": "custom"
+    },
+    {
+      "action": "reject",
+      "ip_cidr": [
+        "0.0.0.0"
+      ],
+      "name": "Block 0.0.0.0",
+      "reject_method": "drop",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "name": "Torrents in Direct",
+      "outbound": "direct",
+      "protocol": "bittorrent",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "ip_is_private": true,
+      "name": "Private in Direct",
+      "outbound": "direct",
+      "type": "custom"
+    },
+    {
+      "action": "route",
+      "domain_suffix": [
+        ".ru",
+        ".su",
+        ".xn--p1ai",
+        ".by",
+        ".xn--90ais",
+        "mangalib.com",
+        "imglib.info",
+        "seimanga.me",
+        "usagi.one"
+      ],
+      "name": "Russia in Direct",
+      "outbound": "direct",
+      "rule_set": [
+        "geoip-ru",
+        "geoip-by",
+        "geosite-ru",
+        "geosite-category-ru",
+        "geosite-category-gov-ru",
+        "geosite-category-ip-geo-detect"
+      ],
+      "type": "custom"
+    }
+  ],
+  "v": 1
+}
+
