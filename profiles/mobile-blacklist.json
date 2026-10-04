@@ -1,5 +1,5 @@
 {
-  "default_outbound": "direct",
+  "default_outbound": "proxy",
   "kind": "throne-route-profile",
   "name": "Bypass Russia Mobile (Blacklist)",
   "rules": [
